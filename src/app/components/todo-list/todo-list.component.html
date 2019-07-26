@@ -13,7 +13,14 @@
   (keyup.enter)="addTodo()"
 />
 
-<div class="todo-item" *ngFor="let todo of todosFiltered()" @fade>
+<todo-item
+  *ngFor="let todo of todosFiltered()"
+  [todo]="todo"
+  (checkedItem)="doneEdit($event)"
+>
+</todo-item>
+
+<!-- <div class="todo-item" *ngFor="let todo of todosFiltered()" @fade>
   <div class="todo-item-left">
     <input type="checkbox" [(ngModel)]="todo.completed" />
     <div
@@ -39,7 +46,7 @@
   <div class="remove-item" (click)="deleteTodo(todo.id)">
     &times;
   </div>
-</div>
+</div> -->
 
 <div class="extra-container">
   <div>
