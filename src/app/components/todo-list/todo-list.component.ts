@@ -103,5 +103,6 @@ export class TodoListComponent implements OnInit {
     } else if (this.filter === "completed") {
       return this.todos.filter(todo => todo.completed);
     }
+    return this.todos;
   }
 }
